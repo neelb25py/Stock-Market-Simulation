@@ -77,7 +77,7 @@ public class StockService {
     }
 
     public double getStockPriceWithTickerSymbol(String ticker) {
-        if (stockTickerExists(ticker)) {
+        if (!stockTickerExists(ticker)) {
             throw new StockNotFoundException("No stock with ticker symbol " + ticker + " exists");
         }
         return getStockByTickerSymbol(ticker).getPricingModel().getPrice().doubleValue();

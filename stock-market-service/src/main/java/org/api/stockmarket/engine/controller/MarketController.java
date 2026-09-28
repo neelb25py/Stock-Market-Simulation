@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.api.stockmarket.engine.dto.MarketStateDTO;
 import org.api.stockmarket.engine.scheduling.MarketSchedulingService;
 import org.api.stockmarket.engine.service.MarketStateService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/api/v1/market")
 @CrossOrigin(origins = "*")
 @AllArgsConstructor
+@Profile("!test")
 public class MarketController {
     private final MarketStateService marketStateService;
     private final MarketSchedulingService marketSchedulingService;

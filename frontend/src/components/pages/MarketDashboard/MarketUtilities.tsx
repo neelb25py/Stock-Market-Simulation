@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import { useEffect, useState } from "react";
 import { mapDTO, type MarketState, type MarketStateDTO } from "../../../types/MarketDTOs";
 import { fetchMarketState, fetchPauseMarket, fetchResumeMarket, fetchUpdateInterval } from "../../../api/MarketClient";
-import { Button, CircularProgress, IconButton, Typography } from "@mui/material";
+import { CircularProgress, IconButton, Typography } from "@mui/material";
 import PauseIcon from '@mui/icons-material/Pause';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import FastForwardIcon from '@mui/icons-material/FastForward';
