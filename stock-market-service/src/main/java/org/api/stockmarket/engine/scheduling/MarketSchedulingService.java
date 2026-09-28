@@ -3,10 +3,12 @@ package org.api.stockmarket.engine.scheduling;
 import lombok.AllArgsConstructor;
 import org.api.stockmarket.core.exception.BadRequestException;
 import org.api.stockmarket.engine.properties.MarketEnvironmentProperties;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
+@Profile("!test")
 public class MarketSchedulingService {
     private final MarketActivityScheduler marketActivityScheduler;
 

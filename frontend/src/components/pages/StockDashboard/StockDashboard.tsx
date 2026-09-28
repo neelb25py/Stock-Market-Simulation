@@ -10,11 +10,12 @@ const StockDashboard: React.FC = () => {
     const [stock, setStock] = useState<StockFullDTO | undefined>();
 
     useEffect(() => {
+        if (!ticker) return;
         const fetchStock = async () => {
-            fetchFullStockByTicker(ticker!!).then((res: StockFullDTO) => setStock(res));
+            fetchFullStockByTicker(ticker).then((res: StockFullDTO) => setStock(res));
         }
         fetchStock();
-    }, []);
+    }, [ticker]);
 
     if(stock == null){
         return <CircularProgress/>
